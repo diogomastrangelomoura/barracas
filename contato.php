@@ -7,7 +7,7 @@
                     <h3>Fale Conosco</h3>
                     <ul>
                         <li><a href="#" title="">Home</a></li>
-                        <li><span>Sobre</span></li>
+                        <li><span>Fale Conosco</span></li>
                     </ul>
                 </div><!--pager-sec-details end-->
             </div>
