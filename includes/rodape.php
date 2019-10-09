@@ -25,16 +25,16 @@
                             <h3>Links para ajuda</h3>
                             <ul>
                                 <li>
-                                    <a href="18_Half_Map.html" title="">Mapa</a>
+                                    <a href="home" title="">Home</a>
                                 </li>
                                 <li>
-                                    <a href="#" title="">Registrar</a>
+                                    <a href="registrar" title="">Registrar</a>
                                 </li>
                                 <li>
-                                    <a href="#" title="">Pricing</a>
+                                    <a href="busca" title="">Busca</a>
                                 </li>
                                 <li>
-                                    <a href="#" title="">Add Listing</a>
+                                    <a href="contato" title="">Contato</a>
                                 </li>
                             </ul>
                         </div><!--bottom-list end-->
@@ -102,7 +102,9 @@
     <script src="<?php echo PATH ?>assets/js/map-cluster/infobox.min.js"></script>
     <script src="<?php echo PATH ?>assets/js/map-cluster/markerclusterer.js"></script>
     <script src="<?php echo PATH ?>assets/js/map-cluster/maps.js"></script>
-
+    <script src="<?php echo PATH ?>assets/js/jquery.mask.js"></script>
+    <script src="<?php echo PATH ?>assets/js/funcoes.js"></script>
+    
 
 
 </body>

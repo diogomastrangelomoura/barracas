@@ -22,6 +22,7 @@
 	RewriteRule ^contato?$ contato.php [L,QSA]
 	RewriteRule ^sobre?$ sobre.php [L,QSA]
 	RewriteRule ^busca?$ busca.php [L,QSA]
+	RewriteRule ^registrar?$ registrar.php [L,QSA]
 
 
 

@@ -4,10 +4,10 @@
     <section class="pager-sec bfr">
             <div class="container">
                 <div class="pager-sec-details">
-                    <h3>Fale Conosco</h3>
+                    <h3>Registrar</h3>
                     <ul>
                         <li><a href="home" title="">Home</a></li>
-                        <li><span>Fale Conosco</span></li>
+                        <li><span>Registrar</span></li>
                     </ul>
                 </div><!--pager-sec-details end-->
             </div>
@@ -20,8 +20,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-8 pl-0">
                             <div class="contact_form">
-                                <h3>Contato</h3>
-                                <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulpu tate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. </p>
+                                <h3>Credenciais</h3>
                                 <form class="js-ajax-form">
                                     <div class="form-group no-pt">
                                         <div class="missing-message">
@@ -34,28 +33,31 @@
                                     </div><!--form-group end-->
                                     <div class="form-fieldss">
                                         <div class="row">
-                                            <div class="col-lg-4 col-md-4 pl-0">
+                                            <div class="col-lg-8 col-md-4 pl-0">
                                                 <div class="form-field">
-                                                    <input type="text" name="name" placeholder="Nome" id="name">
+                                                    <input type="text" name="login" placeholder="Login" id="login">
                                                 </div><!-- form-field end-->
-                                            </div>
-                                            <div class="col-lg-4 col-md-4">
+                                                <div class="form-field">
+                                                    <input type="password" name="pass" placeholder="Senha" id="pass">
+                                                </div><!-- form-field end-->
+                                                <div class="form-field">
+                                                    <input type="password" name="pass" placeholder="Confirmar Senha" id="pass">
+                                                </div><!-- form-field end-->
                                                 <div class="form-field">
                                                     <input type="email" name="email" placeholder="E-mail" id="email">
                                                 </div><!-- form-field end-->
-                                            </div>
-                                            <div class="col-lg-4 col-md-4 pr-0">
                                                 <div class="form-field">
-                                                    <input type="text" name="phone" placeholder="Telefone">
+                                                    <input type="text" name="nome" placeholder="Nome Completo" id="nome">
                                                 </div><!-- form-field end-->
-                                            </div>
-                                            <div class="col-lg-12 col-md-12 pl-0 pr-0">
                                                 <div class="form-field">
-                                                    <textarea name="message" placeholder="Mensagem"></textarea>
+                                                    <input type="text" name="agencia" placeholder="Agência" id="agencia">
+                                                </div><!-- form-field end-->
+                                                <div class="form-field">
+                                                    <input type="text" name="tel" placeholder="Telefone" id="text" class="phone_with_ddd">
                                                 </div><!-- form-field end-->
                                             </div>
                                             <div class="col-lg-12 col-md-12 pl-0">
-                                                <button type="submit" class="btn-default submit">Enviar Mensagem</button>
+                                                <button type="submit" class="btn-default submit">Cadastrar</button>
                                             </div>
                                             
                                         </div>
