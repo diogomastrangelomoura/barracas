@@ -6,12 +6,12 @@
 <?php 
 
 $id = (int) $id_imovel;
-;
-	$sql = $db->select("SELECT imoveis.*, bairros.bairro, caracteristicas.*  FROM imoveis
+
+	$sql = $db->select("SELECT imoveis.*, bairros.bairro, caracteristicas.*,categoria.*  FROM imoveis
     INNER JOIN bairros ON imoveis.id_bairro = bairros.id_bairro
     INNER JOIN caracteristicas ON imoveis.id_carac = caracteristicas.id_carac
-    WHERE imoveis.id_imoveis = $id
-    ORDER BY imoveis.id_imoveis");
+    INNER JOIN categoria ON imoveis.id_cate = categoria.id_cate
+    WHERE imoveis.id_imoveis = $id ");
 
     $line = $db->expand($sql)
 ?>
@@ -28,37 +28,27 @@ $id = (int) $id_imovel;
                             </a>
                             <ul>
                                 <?php
-                                	if($line['piscina'] == true){
-                                		echo "<li>Piscina</li>";
-                                	}
-                                	if($line['churras'] == true){
-                                		echo "<li>Churrasqueira</li>";
-                                	}
-                                	if($line['fogao'] == true){
-                                		echo "<li>Fogão</li>";
-                                	}
-                                	if($line['geladeira'] == true){
-                                		echo "<li>Geladeira</li>";
-                                	}
-                                	if($line['camas'] != 0){
-                                		if($line['camas'] == 1){
-                                			echo "<li>".$line['camas']." Cama</li>";
-                                		}else echo "<li>".$line['camas']." Camas</li>";
-                                	}
-                                	if($line['garagem'] == true){
-                                		echo "<li>Garagem</li>";
-                                	}
-                                	if($line['sinuca'] == true){
-                                		echo "<li>Mesa de Sinuca</li>";
-                                	}
-                                	if($line['ar_cond'] == true){
-                                		echo "<li>Ar Condicionado</li>";
-                                	}
+                                    if($line['salao'] == true){
+                                        echo "<li>Salão de Festas</li>";
+                                    }
+                                    if($line['chacara'] == true){
+                                        echo "<li>Chacara</li>";
+                                    }
+                                    if($line['barraca'] == true){
+                                        echo "<li>Barraca</li>";
+                                    }
+                                	if($line['banheiros'] != 0){
+                                        if($line['banheiros'] == 1) echo "<li>".$line['banheiros']." Banheiro</li>";
+                                                else echo "<li>".$line['banheiros']." Banheiros</li>";
+                                    }
+                                    if($line['tamanho'] != 0){
+                                        echo "<li>".$line['tamanho']." m²</li>";
+                                    }
                                 ?>
                             </ul>
                         </div><!--card-body end-->
                         <div class="rate-info">
-                            <h5>R$ <?php echo $line['preco']?></h5>
+                            <h5>R$ <?php echo valores($line['preco'])?></h5>
                             <span>Alugar</span>
                         </div><!--rate-info end-->
                     </div><!--card end-->
@@ -131,93 +121,54 @@ $id = (int) $id_imovel;
                                     <h3>Detalhes</h3>
                                     <ul>
                                         <?php
+                                            if($line['salao'] == true){
+                                                echo "<h4><li>Salão de Festas</li></h4>";
+                                            }
+                                            if($line['chacara'] == true){
+                                                echo "<h4><li>Chacara</li></h4>";
+                                            }
+                                            if($line['barraca'] == true){
+                                                echo "<h4><li>Barraca</li></h4>";
+                                            }
                                             if($line['piscina'] == true){
-                                                echo "<li>Piscina</li>";
+                                                echo "<h4><li>Piscina</li></h4>";
                                             }
                                             if($line['churras'] == true){
-                                                echo "<li>Churrasqueira</li>";
+                                                echo "<h4><li>Churrasqueira</li></h4>";
                                             }
                                             if($line['fogao'] == true){
-                                                echo "<li>Fogão</li>";
+                                                echo "<h4><li>Fogão</li></h4>";
                                             }
                                             if($line['geladeira'] == true){
-                                                echo "<li>Geladeira</li>";
+                                                echo "<h4><li>Geladeira</li></h4>";
                                             }
                                             if($line['camas'] != 0){
-                                                if($line['camas'] == 1){
-                                                    echo "<li>".$line['camas']." Cama</li>";
-                                            }else echo "<li>".$line['camas']." Camas</li>";
+                                                if($line['camas'] == 1) echo "<h4><li>".$line['camas']." Cama</li></h4>";
+                                                else echo "<h4><li>".$line['camas']." Camas</li></h4>";
                                             }
                                             if($line['garagem'] == true){
-                                                echo "<li>Garagem</li>";
+                                                echo "<h4><li>Garagem</li></h4>";
                                             }
                                             if($line['sinuca'] == true){
-                                                echo "<li>Mesa de Sinuca</li>";
+                                                echo "<h4><li>Mesa de Sinuca</li></h4>";
                                             }
                                             if($line['ar_cond'] == true){
-                                                echo "<li>Ar Condicionado</li>";
+                                                echo "<h4><li>Ar Condicionado</li></h4>";
                                             }
                                         ?>
-                                        <li>
+                                        <!--<li>
                                             <h4>Construction Tyoe:</h4>
                                             <span>Condo</span>
-                                        </li>
+                                        </li>-->
                                         
                                     </ul>
                                 </div><!--details-info end-->
-                                <div class="features-dv">
-                                    <h3>Features</h3>
-                                    <form class="form_field">
-                                        <ul>
-                                            <li class="input-field">
-                                                <input type="checkbox" name="cc" id="c1">
-                                                <label for="c1">
-                                                    <span></span>
-                                                    <small>Parking</small>
-                                                </label>
-                                            </li>
-                                            <li class="input-field">
-                                                <input type="checkbox" name="cc" id="c2" checked>
-                                                <label for="c2">
-                                                    <span></span>
-                                                    <small>Academia</small>
-                                                </label>
-                                            </li>
-                                            <li class="input-field">
-                                                <input type="checkbox" name="cc" id="c3">
-                                                <label for="c3">
-                                                    <span></span>
-                                                    <small>Aquecedor</small>
-                                                </label>
-                                            </li>
-                                            <li class="input-field">
-                                                <input type="checkbox" name="cc" id="c4" checked>
-                                                <label for="c4">
-                                                    <span></span>
-                                                    <small>Ar Condicionado</small>
-                                                </label>
-                                            </li>
-                                            <li class="input-field">
-                                                <input type="checkbox" name="cc" id="c5" checked>
-                                                <label for="c5">
-                                                    <span></span>
-                                                    <small>Internet</small>
-                                                </label>
-                                            </li>
-                                            <li class="input-field">
-                                                <input type="checkbox" name="cc" id="c6">
-                                                <label for="c6">
-                                                    <span></span>
-                                                    <small>Piscina</small>
-                                                </label>
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </div><!--features-dv end-->
-                                <div class="floorplan">
-                                    <h3>floorplan</h3>
-                                    <img src="https://via.placeholder.com/427x268" alt="">
-                                </div><!--floorplan end-->
+
+                                <?php 
+                                    $where = "WHERE id_imagens = ".$line['id_imagens'];
+                                    require("includes/plantaBaixa.php"); 
+                                ?> 
+
                                 <div class="nearby-locts">
                                     <h3>What's Nearby?</h3>
                                     <span>Powered by <img src="assets/images/ylog.png" alt=""></span>
@@ -281,74 +232,15 @@ $id = (int) $id_imovel;
                                     </div>
                                 </div><!--nearby-locts end-->
                                 <div class="comments-dv">
-                                    <h3>3 Reviews</h3>
-                                    <div class="comment-section">
-                                        <ul>
-                                            <li>
-                                                <div class="cm-info-sec">
-                                                    <div class="cm-img">
-                                                        <img src="https://via.placeholder.com/79x79" alt="">
-                                                    </div><!--author-img end-->
-                                                    <div class="cm-info">
-                                                        <h3>Kritsofer Nolan</h3>
-                                                        <h4>April 25, 2018</h4>
-                                                    </div>
-                                                    <ul class="rating-lst">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                    </ul><!--rating-lst end-->
-                                                </div><!--cm-info-sec end-->
-                                                <p>Nam placerat facilisis placerat. Morbi elit nibh, auctor sit amet sodales id, porttitor eu quam. Aenean dui libero, laoreet quis con sequat vitae, posuere ut sapien. Etiam pharetra nulla vel diam eleifend, eu placerat nunc molestie. </p>
-                                                <a href="#" title="" class="cm-reply">Reply</a>
-                                            </li>
-                                            <li>
-                                                <div class="cm-info-sec">
-                                                    <div class="cm-img">
-                                                        <img src="https://via.placeholder.com/79x79" alt="">
-                                                    </div><!--author-img end-->
-                                                    <div class="cm-info">
-                                                        <h3>Kritsofer Nolan</h3>
-                                                        <h4>April 25, 2018</h4>
-                                                    </div>
-                                                    <ul class="rating-lst">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                    </ul><!--rating-lst end-->
-                                                </div><!--cm-info-sec end-->
-                                                <p>Nam placerat facilisis placerat. Morbi elit nibh, auctor sit amet sodales id, porttitor eu quam. Aenean dui libero, laoreet quis con sequat vitae, posuere ut sapien. Etiam pharetra nulla vel diam eleifend, eu placerat nunc molestie. </p>
-                                                <a href="#" title="" class="cm-reply">Reply</a>
-                                            </li>
-                                            <li>
-                                                <div class="cm-info-sec">
-                                                    <div class="cm-img">
-                                                        <img src="https://via.placeholder.com/79x79" alt="">
-                                                    </div><!--author-img end-->
-                                                    <div class="cm-info">
-                                                        <h3>Kritsofer Nolan</h3>
-                                                        <h4>April 25, 2018</h4>
-                                                    </div>
-                                                    <ul class="rating-lst">
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                        <li><span class="la la-star"></span></li>
-                                                    </ul><!--rating-lst end-->
-                                                </div><!--cm-info-sec end-->
-                                                <p>Nam placerat facilisis placerat. Morbi elit nibh, auctor sit amet sodales id, porttitor eu quam. Aenean dui libero, laoreet quis con sequat vitae, posuere ut sapien. Etiam pharetra nulla vel diam eleifend, eu placerat nunc molestie. </p>
-                                                <a href="#" title="" class="cm-reply">Reply</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    <!-- Começo Reviews-->
+                                    <?php 
+                                        $where = "WHERE id_imovel = $id";
+                                        require("includes/review.php"); 
+                                    ?>
+                                    <!-- Final Reviews-->
                                     <div class="review-hd">
                                         <div class="rev-hd">
-                                            <h3>Write a Review</h3>
+                                            <h3>Comente sua Experiência</h3>
                                             <ul class="rating-lst">
                                                 <li><span class="la la-star"></span></li>
                                                 <li><span class="la la-star"></span></li>
@@ -362,90 +254,57 @@ $id = (int) $id_imovel;
                                                 <div class="row">
                                                     <div class="col-lg-4 col-md-4 pl-0">
                                                         <div class="form-field">
-                                                            <input type="text" name="name" placeholder="Your Name">
+                                                            <input type="text" name="name" placeholder="Nome">
                                                         </div><!--form-field end-->
                                                     </div>
                                                     <div class="col-lg-4 col-md-4">
                                                         <div class="form-field">
-                                                            <input type="text" name="email" placeholder="Your Email">
+                                                            <input type="text" name="email" placeholder="E-mail">
                                                         </div><!--form-field end-->
                                                     </div>
                                                     <div class="col-lg-4 col-md-4 pr-0">
                                                         <div class="form-field">
-                                                            <input type="text" name="phone" placeholder="Your Phone">
+                                                            <input type="text" name="phone" placeholder="Telefone">
                                                         </div><!--form-field end-->
                                                     </div>
                                                     <div class="col-lg-12 pl-0 pr-0">
                                                         <div class="form-field">
-                                                            <textarea name="message" placeholder="Your Message"></textarea>
+                                                            <textarea name="msg" placeholder="Mensagem"></textarea>
                                                         </div><!--form-field end-->
                                                     </div>
                                                     <div class="col-lg-12 pl-0 pr-0">
-                                                        <button type="submit" class="btn-default">Post Review</button>
+                                                        <button type="submit" class="btn-default">Postar Mensagem</button>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div><!--post-comment-sec end-->
                                     </div><!--review-hd end-->
                                 </div><!--comments-dv end-->
+
+
                                 <div class="similar-listings-posts">
                                     <h3>Outras Locações</h3>
-                                    	<?php
+                                   <div class="list-products">
+                                        <?php
                                             $where = "WHERE imoveis.id_imoveis != ". $id; 
-                 							require("includes/info.php");
-                 						?>
-                                </div><!--similar-listings-posts end-->
+                                            require("includes/infoOutros.php")
+                                        ?>   
+                                    </div>
                             </div><!--property-pg-left end-->
+                        </div>
                         </div>
                         <div class="col-lg-4 pr-0">
                             <div class="sidebar layout2">
-                                <div class="widget widget-form">
-                                    <h3 class="widget-title">Contact Listing Agent</h3>
-                                    <div class="contct-info">
-                                        <img src="https://via.placeholder.com/81x74" alt="">
-                                        <div class="contct-nf">
-                                            <h3>Tomas Wilkinson</h3>
-                                            <h4>Douglas and Eleman Agency</h4>
-                                            <span><i class="la la-phone"></i>+1 212-925-3797</span>
-                                        </div>
-                                    </div><!--contct-info end-->
-                                    <div class="post-comment-sec">
-                                        <form>
-                                            <div class="form-field">
-                                                <input type="text" name="name" placeholder="Your Name">
-                                            </div><!--form-field end-->
-                                            <div class="form-field">
-                                                <input type="text" name="email" placeholder="Your Email">
-                                            </div><!--form-field end-->
-                                            <div class="form-field">
-                                                <input type="text" name="phone" placeholder="Your Phone">
-                                            </div><!--form-field end-->
-                                            <div class="form-field">
-                                                <textarea name="message" placeholder="Your Message"></textarea>
-                                            </div><!--form-field end-->
-                                            <button type="submit" class="btn2">Contato</button>
-                                        </form>
-                                    </div><!--post-comment-sec end-->
-                                </div><!--widget-form end-->
+                                <!-- Inicio contato prop -->
+                                <?php 
+                                    $where = "WHERE id_infoProp = ". $line['id_infoProp'];
+                                    require("includes/contatoProp.php"); 
+                                ?>
+                                <!-- Final contato prop -->
                                 <div class="widget widget-catgs">
                                     <h3 class="widget-title">Categorias</h3>
                                     <ul>
-                                        <li>
-                                            <a href="#" title=""><i class="la la-angle-right"></i><span>House</span></a>
-                                            <span>7</span>
-                                        </li>
-                                        <li>
-                                            <a href="#" title=""><i class="la la-angle-right"></i><span>Condo</span></a>
-                                            <span>15</span>
-                                        </li>
-                                        <li>
-                                            <a href="#" title=""><i class="la la-angle-right"></i><span>Townhouse</span></a>
-                                            <span>4</span>
-                                        </li>
-                                        <li>
-                                            <a href="#" title=""><i class="la la-angle-right"></i><span>Coop</span></a>
-                                            <span>1</span>
-                                        </li>
+                                        <?php require("includes/categorias.php"); ?>
                                     </ul>
                                 </div><!--widget-catgs end-->
                                 <div class="widget widget-posts">

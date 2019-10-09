@@ -6,8 +6,8 @@
                 <div class="pager-sec-details">
                     <h3>Fale Conosco</h3>
                     <ul>
-                        <li><a href="#" title="">Home</a></li>
-                        <li><span>Fale Conoscom</span></li>
+                        <li><a href="home" title="">Home</a></li>
+                        <li><span>Fale Conosco</span></li>
                     </ul>
                 </div><!--pager-sec-details end-->
             </div>

@@ -4,10 +4,10 @@
 	<section class="pager-sec bfr">
             <div class="container">
                 <div class="pager-sec-details">
-                    <h3>Fale Conosco</h3>
+                    <h3>Busca</h3>
                     <ul>
                         <li><a href="home" title="">Home</a></li>
-                        <li><span>Fale Conosco</span></li>
+                        <li><span>Busca</span></li>
                     </ul>
                 </div><!--pager-sec-details end-->
             </div>

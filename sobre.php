@@ -8,7 +8,7 @@
                 <div class="pager-sec-details">
                     <h3>Sobre</h3>
                     <ul>
-                        <li><a href="#" title="">Home</a></li>
+                        <li><a href="home" title="">Home</a></li>
                         <li><span>Sobre</span></li>
                     </ul>
                 </div><!--pager-sec-details end-->

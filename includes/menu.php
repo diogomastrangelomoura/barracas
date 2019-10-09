@@ -16,12 +16,12 @@
                                             </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="dropdown">
+                                            <a class="nav-link" href="sobre" >
                                                 Sobre
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="contato.php" data-toggle="dropdown">
+                                            <a class="nav-link" href="contato" >
                                                 Fale Conosco
                                             </a>
                                         </li>
@@ -29,7 +29,7 @@
                                     <div class="d-inline my-2 my-lg-0">
                                         <ul class="navbar-nav">
                                             <li class="nav-item signin-btn">
-                                                <a href="#" class="nav-link">
+                                                <a href="javascript:void(0)" class="nav-link">
                                                     <i class="la la-sign-in"></i>
                                                     <b class="signin-op">Logar</b>
                                                 </a>
