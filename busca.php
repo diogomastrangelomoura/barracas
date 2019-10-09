@@ -18,8 +18,33 @@
            
                 <div class="row">
                   
-                 <?php   
-                    $where = "WHERE imoveis.preco>='$preco_minimo' AND imoveis.preco<='$preco_maximo'";              	
+                 <?php  
+                     $busca1 = '';
+                     $busca2 = '';
+                     $busca3 = '';
+                     $busca4 = '';
+
+                     if (!empty($endereco)) {
+                         $busca1 = "AND imoveis.endereco LIKE '%$endereco%'";
+                     }
+
+
+                      if (!empty($categoria)) {
+                         $busca2 = "AND imoveis.id_cate='$categoria'";
+                     }
+
+
+                      if (!empty($preco_minimo)) {
+                         $busca3 = "AND imoveis.preco>='$preco_minimo'";
+                     }
+
+
+                      if (!empty($preco_maximo)) {
+                         $busca4 = "AND imoveis.preco<='$preco_maximo'";
+                     }
+
+
+                    $where = "WHERE imoveis.id_imoveis!='0' $busca1 $busca2 $busca3 $busca4";              	
                  	require("includes/info.php");
                  ?> 
 

@@ -68,7 +68,7 @@
                         </div>
                         <form action="busca" method="post" class="row banner-search">
                             <div class="form_field addres">
-                                <input type="text" class="form-control" placeholder="Digite o endereço">
+                                <input type="text" class="form-control" name="endereco" placeholder="Digite o endereço">
                             </div>
                             <div class="form_field tpmax">
                                 <div class="form-group">
@@ -77,7 +77,7 @@
                                             <span>Categorias</span>
                                             <i class="fa fa-angle-down"></i>
                                         </div>
-                                        <input type="hidden" name="gender">
+                                        <input type="hidden" name="categorias">
                                         <ul class="dropeddown">
                                             <li>Salão de Festa</li>
                                             <li>Chacaras</li>

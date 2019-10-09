@@ -527,7 +527,7 @@ header.pb .menu-button span {
 
 .banner {
   padding: 200px 0px;
-  background: url("https://via.placeholder.com/1920x674");
+  background: url("../../interface/fundo.jpg");
   background-size: cover;
   background-position: center;
   min-height: 674px;
@@ -540,7 +540,7 @@ header.pb .menu-button span {
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(7, 15, 67, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     z-index: -1; }
 .banner .container {
   padding: 0 15px;
