@@ -5641,3 +5641,11 @@ label.error {
   outline: none;
   cursor: pointer;
 }
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}

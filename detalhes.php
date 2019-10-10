@@ -122,38 +122,55 @@ $id = (int) $id_imovel;
                                     <ul>
                                         <?php
                                             if($line['salao'] == true){
-                                                echo "<h4><li>Salão de Festas</li></h4>";
+                                                echo "<h4><li><i class='fa fa-check-circle green' aria-hidden='true'></i> Salão de Festas</li></h4>";
                                             }
                                             if($line['chacara'] == true){
-                                                echo "<h4><li>Chacara</li></h4>";
+                                                echo "<h4><li> <i class='fa fa-check-circle green' aria-hidden='true'></i> Chacara</li></h4>";
                                             }
                                             if($line['barraca'] == true){
-                                                echo "<h4><li>Barraca</li></h4>";
+                                                echo "<h4><li> <i class='fa fa-check-circle green' aria-hidden='true'></i> Barraca</li></h4>";
                                             }
                                             if($line['piscina'] == true){
-                                                echo "<h4><li>Piscina</li></h4>";
+                                                echo "<h4><li><i class='fa fa-check-circle green' aria-hidden='true'></i> Piscina</li></h4>";
+                                            }elseif ($line['piscina'] == false) {
+                                                echo "<h4><li><i class='fa fa-times-circle red' aria-hidden='true'></i> Piscina</li></h4>";
                                             }
                                             if($line['churras'] == true){
-                                                echo "<h4><li>Churrasqueira</li></h4>";
+                                                echo "<h4><li><i class='fa fa-check-circle green' aria-hidden='true'></i> Churrasqueira</li></h4>";
+                                            }elseif($line['churras'] == false){
+                                                echo "<h4><li><i class='fa fa-times-circle red' aria-hidden='true'></i> Churrasqueira</li></h4>";
                                             }
                                             if($line['fogao'] == true){
-                                                echo "<h4><li>Fogão</li></h4>";
+                                                echo "<h4><li><i class='fa fa-check-circle green' aria-hidden='true'></i> Fogão</li></h4>";
+                                            }elseif($line['fogao'] == false){
+                                                echo "<h4><li><i class='fa fa-times-circle red' aria-hidden='true'></i> Fogão</li></h4>";
                                             }
                                             if($line['geladeira'] == true){
-                                                echo "<h4><li>Geladeira</li></h4>";
+                                                echo "<h4><li><i class='fa fa-check-circle green' aria-hidden='true'></i> Geladeira</li></h4>";
+                                            }elseif($line['geladeira'] == false){
+                                                echo "<h4><li><i class='fa fa-times-circle red' aria-hidden='true'></i> Geladeira</li></h4>";
                                             }
                                             if($line['camas'] != 0){
-                                                if($line['camas'] == 1) echo "<h4><li>".$line['camas']." Cama</li></h4>";
-                                                else echo "<h4><li>".$line['camas']." Camas</li></h4>";
+                                                if($line['camas'] == 1) 
+                                                    echo "<h4><li> <i class='fa fa-check-circle green' aria-hidden='true'></i> ".$line['camas']." Cama</li></h4>";
+                                                else echo "<h4><li> <i class='fa fa-check-circle green' aria-hidden='true'></i> ".$line['camas']." Camas</li></h4>";
+                                            }elseif($line['camas'] == 0){
+                                                echo "<h4><li> <i class='fa fa-times-circle red' aria-hidden='true'></i> ".$line['camas']." Cama</li></h4>";
                                             }
                                             if($line['garagem'] == true){
-                                                echo "<h4><li>Garagem</li></h4>";
+                                                echo "<h4><li> <i class='fa fa-check-circle green' aria-hidden='true'></i> Garagem</li></h4>";
+                                            }elseif($line['garagem'] == false){
+                                                echo "<h4><li> <i class='fa fa-times-circle red' aria-hidden='true'></i> Garagem</li></h4>";
                                             }
                                             if($line['sinuca'] == true){
-                                                echo "<h4><li>Mesa de Sinuca</li></h4>";
+                                                echo "<h4><li> <i class='fa fa-check-circle green' aria-hidden='true'></i> Mesa de Sinuca</li></h4>";
+                                            }elseif($line['sinuca'] == false){
+                                                echo "<h4><li> <i class='fa fa-times-circle red' aria-hidden='true'></i> Mesa de Sinuca</li></h4>";
                                             }
                                             if($line['ar_cond'] == true){
-                                                echo "<h4><li>Ar Condicionado</li></h4>";
+                                                echo "<h4><li> <i class='fa fa-check-circle green' aria-hidden='true'></i> Ar Condicionado</li></h4>";
+                                            }elseif($line['ar_cond'] == false){
+                                                echo "<h4><li> <i class='fa fa-times-circle red' aria-hidden='true'></i> Ar Condicionado</li></h4>";
                                             }
                                         ?>
                                         <!--<li>

@@ -32,8 +32,7 @@
                       if (!empty($categoria)) {
                          $busca2 = "AND imoveis.id_cate='$categoria'";
                      }
-
-
+                     
                       if (!empty($preco_minimo)) {
                          $busca3 = "AND imoveis.preco>='$preco_minimo'";
                      }

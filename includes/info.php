@@ -28,7 +28,7 @@ if($db->rows($sql)){
                             <div class="card-body">
                                 <a href="detalhes.php" title="">
                                     <h3> <?php echo $data['bairro'] ?> </h3>
-                                    <p><i class="la la-map-marker"></i> <?php echo $data['bairro']  ?> </p>
+                                    <p><i class="la la-map-marker"></i> <?php echo $data['endereco']  ?> </p>
                                 </a>
                                 <ul>
                                     <?php

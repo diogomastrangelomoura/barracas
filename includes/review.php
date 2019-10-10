@@ -6,7 +6,7 @@ if($db->rows($sql)){
 
 ?>
 
-<h3> <?php echo $db->rows($sql) ?> Reviews</h3>
+<h3> <?php echo $db->rows($sql) ?> Comentários</h3>
     <div class="comment-section">
         <ul>
 

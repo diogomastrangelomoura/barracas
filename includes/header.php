@@ -20,7 +20,7 @@ require ("class/class.seguranca.php");
     <link rel="stylesheet" href="<?php echo PATH ?>assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo PATH ?>assets/css/responsive.css">
     <link rel="stylesheet" type="text/css" href="<?php echo PATH ?>assets/css/color.css">
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <base href="<?php echo PATH ?>">
 
 </head>
