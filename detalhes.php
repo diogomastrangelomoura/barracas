@@ -256,17 +256,19 @@ $id = (int) $id_imovel;
                                     ?>
                                     <!-- Final Reviews-->
                                     <div class="review-hd">
+                                        
+                                        <form >
                                         <div class="rev-hd">
-                                            <h3>Comente sua Experiência</h3>
+                                        <h3>Comente sua Experiência</h3>
 
-                                            <ul class="rating-lst">
+                                        <ul class="rating-lst">
 
-                                                <?php require("includes/starRating.php"); ?>
+                                            <?php require("includes/starRating.php"); ?>
 
-                                            </ul><!--rating-lst end-->
+                                        </ul><!--rating-lst end-->
                                         </div><!--rev-hd end-->
                                         <div class="post-comment-sec">
-                                            <form>
+                                            
                                                 <div class="row">
                                                     <div class="col-lg-4 col-md-4 pl-0">
                                                         <div class="form-field">
@@ -298,12 +300,16 @@ $id = (int) $id_imovel;
                                 </div><!--comments-dv end-->
 
                                 <?php 
-                                    /*if(isset($name) && isset($comentario)){
+                                    if(isset($name) && isset($comentario)){
+                                        $data = $db->data_user_para_mysql(date("d/m/Y"));
                                         $sql = $db->select("INSERT INTO reviews(id_imovel,nome,rating,comentario,data)
-                                            VALUES($id_imovel,$rating,$msg," . 
-                                            data_user_para_mysql(date("d/m/Y")) . ")");
+                                            VALUES($id_imovel,$rating,$msg,$data");
                                         $db->expand($sql);
-                                    }*/
+                                    }
+                                    unset($name);
+                                    unset($comentario);
+                                    unset($rating);
+                                    unset($data);
                                  ?>
 
                                 <div class="similar-listings-posts">
