@@ -24,6 +24,8 @@
 	RewriteRule ^busca?$ busca.php [L,QSA]
 	RewriteRule ^registrar?$ registrar.php [L,QSA]
 
+	RewriteRule ^busca/(.*)?$ busca.php?categoria=$1 [L,QSA]
+
 
 
 </IfModule>

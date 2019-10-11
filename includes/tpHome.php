@@ -77,11 +77,11 @@
                                             <span>Categorias</span>
                                             <i class="fa fa-angle-down"></i>
                                         </div>
-                                        <input type="hidden" name="categorias">
-                                        <ul class="dropeddown">
-                                            <li>Salão de Festa</li>
-                                            <li>Chacaras</li>
-                                            <li>Barracas</li>
+                                        <input type="hidden" name="categoria" id="categoria">
+                                        <ul class="dropeddown" id="cate">
+                                            <li id="cate1">Salão de Festa</li>
+                                            <li id="cate2">Chacaras</li>
+                                            <li id="cate3">Barracas</li>
                                         </ul>
                                     </div>
                                 </div>

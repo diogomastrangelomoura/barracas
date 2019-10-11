@@ -18,7 +18,8 @@
            
                 <div class="row">
                   
-                 <?php  
+                 <?php
+                     if(strpos($categoria,"cate") !== false)$categoria = str_replace("cate", "", $categoria);
                      $busca1 = '';
                      $busca2 = '';
                      $busca3 = '';
