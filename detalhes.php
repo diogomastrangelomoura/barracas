@@ -258,12 +258,11 @@ $id = (int) $id_imovel;
                                     <div class="review-hd">
                                         <div class="rev-hd">
                                             <h3>Comente sua Experiência</h3>
+
                                             <ul class="rating-lst">
-                                                <li><span class="la la-star"></span></li>
-                                                <li><span class="la la-star"></span></li>
-                                                <li><span class="la la-star"></span></li>
-                                                <li><span class="la la-star"></span></li>
-                                                <li><span class="la la-star"></span></li>
+
+                                                <?php require("includes/starRating.php"); ?>
+
                                             </ul><!--rating-lst end-->
                                         </div><!--rev-hd end-->
                                         <div class="post-comment-sec">
@@ -298,6 +297,14 @@ $id = (int) $id_imovel;
                                     </div><!--review-hd end-->
                                 </div><!--comments-dv end-->
 
+                                <?php 
+                                    /*if(isset($name) && isset($comentario)){
+                                        $sql = $db->select("INSERT INTO reviews(id_imovel,nome,rating,comentario,data)
+                                            VALUES($id_imovel,$rating,$msg," . 
+                                            data_user_para_mysql(date("d/m/Y")) . ")");
+                                        $db->expand($sql);
+                                    }*/
+                                 ?>
 
                                 <div class="similar-listings-posts">
                                     <h3>Outras Locações</h3>
@@ -323,80 +330,7 @@ $id = (int) $id_imovel;
                                     <ul>
                                         <?php require("includes/categorias.php"); ?>
                                     </ul>
-                                </div><!--widget-catgs end-->
-                                <div class="widget widget-posts">
-                                    <h3 class="widget-title">Popular Listings</h3>
-                                    <ul>
-                                        <li>
-                                            <div class="wd-posts">
-                                                <div class="ps-img">
-                                                    <a href="14_Blog_Open.html" title="">
-                                                        <img src="https://via.placeholder.com/112x89" alt="">
-                                                    </a>
-                                                </div><!--ps-img end-->
-                                                <div class="ps-info">
-                                                    <h3><a href="14_Blog_Open.html" title="">Traditional Apartments</a></h3>
-                                                    <strong>$125.700</strong>
-                                                    <span><i class="la la-map-marker"></i>212 5th Ave, New York</span>
-                                                </div><!--ps-info end-->
-                                            </div><!--wd-posts end-->
-                                        </li>
-                                        <li>
-                                            <div class="wd-posts">
-                                                <div class="ps-img">
-                                                    <a href="14_Blog_Open.html" title="">
-                                                        <img src="https://via.placeholder.com/112x89" alt="">
-                                                    </a>
-                                                </div><!--ps-img end-->
-                                                <div class="ps-info">
-                                                    <h3><a href="14_Blog_Open.html" title="">Traditional Apartments</a></h3>
-                                                    <strong>$125.700</strong>
-                                                    <span><i class="la la-map-marker"></i>212 5th Ave, New York</span>
-                                                </div><!--ps-info end-->
-                                            </div><!--wd-posts end-->
-                                        </li>
-                                        <li>
-                                            <div class="wd-posts">
-                                                <div class="ps-img">
-                                                    <a href="14_Blog_Open.html" title="">
-                                                        <img src="https://via.placeholder.com/112x89" alt="">
-                                                    </a>
-                                                </div><!--ps-img end-->
-                                                <div class="ps-info">
-                                                    <h3><a href="14_Blog_Open.html" title="">Apartamentos Tradicionais</a></h3>
-                                                    <strong>$125.700</strong>
-                                                    <span><i class="la la-map-marker"></i>212 5th Ave, New York</span>
-                                                </div><!--ps-info end-->
-                                            </div><!--wd-posts end-->
-                                        </li>
-                                    </ul>
-                                </div><!--widget-posts end-->
-                                <div class="widget widget-calculator">
-                                    <h3 class="widget-title">Mortgage Calculator</h3>
-                                    <form>
-                                        <ul>
-                                            <li>
-                                                <i>$</i>
-                                                <input type="number" name="amount" placeholder="Total Amount">
-                                            </li>
-                                            <li>
-                                                <i>$</i>
-                                                <input type="number" name="amount" placeholder="Down Payment">
-                                            </li>
-                                            <li>
-                                                <i>$</i>
-                                                <input type="number" name="amount" placeholder="Interest Rate">
-                                            </li>
-                                            <li>
-                                                <i>$</i>
-                                                <input type="number" name="amount" placeholder="Monthly Repayments">
-                                            </li>
-                                            <li>
-                                                <button type="submit" class="btn2">Calcular</button>
-                                            </li>
-                                        </ul>
-                                    </form>
-                                </div><!--widget-calculator end-->
+                                </div><!--widget-catgs end-->     
                             </div><!--sidebar end-->
                         </div>
                     </div>

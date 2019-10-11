@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Out-2019 às 17:43
+-- Generation Time: 11-Out-2019 às 17:58
 -- Versão do servidor: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -128,6 +128,7 @@ CREATE TABLE IF NOT EXISTS `imoveis` (
   `id_cate` int(10) NOT NULL,
   `id_imagens` int(10) NOT NULL,
   `id_infoProp` int(10) NOT NULL,
+  `endereco` varchar(200) NOT NULL,
   PRIMARY KEY (`id_imoveis`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -135,9 +136,9 @@ CREATE TABLE IF NOT EXISTS `imoveis` (
 -- Extraindo dados da tabela `imoveis`
 --
 
-INSERT INTO `imoveis` (`id_imoveis`, `id_bairro`, `preco`, `id_carac`, `desc`, `id_cate`, `id_imagens`, `id_infoProp`) VALUES
-(1, 1, 200.00, 2, 'Barraca mais barata', 3, 2, 1),
-(2, 2, 5000.00, 1, 'Barraca mais cara', 2, 1, 1);
+INSERT INTO `imoveis` (`id_imoveis`, `id_bairro`, `preco`, `id_carac`, `desc`, `id_cate`, `id_imagens`, `id_infoProp`, `endereco`) VALUES
+(1, 1, 200.00, 2, 'Barraca mais barata', 3, 2, 1, 'av padre salustio'),
+(2, 2, 5000.00, 1, 'Barraca mais cara', 2, 1, 1, 'rua tupiniquins');
 
 -- --------------------------------------------------------
 
@@ -191,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   `id_review` int(10) NOT NULL AUTO_INCREMENT,
   `id_imovel` int(10) NOT NULL,
   `nome` varchar(99) NOT NULL,
-  `rating` int(10) NOT NULL,
+  `rating` float NOT NULL,
   `comentario` varchar(500) NOT NULL,
   `data` date NOT NULL,
   PRIMARY KEY (`id_review`)
@@ -202,8 +203,8 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 --
 
 INSERT INTO `reviews` (`id_review`, `id_imovel`, `nome`, `rating`, `comentario`, `data`) VALUES
-(1, 2, 'Gustavo', 0, 'Muito bom', '2019-10-09'),
-(2, 2, 'Matheus', 0, 'Adorei', '2019-10-08');
+(1, 2, 'Gustavo', 5, 'Muito bom', '2019-10-09'),
+(2, 2, 'Matheus', 4, 'Adorei', '2019-10-08');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

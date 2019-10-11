@@ -65,22 +65,6 @@
                                 </form>
                             </div><!--contact_form end-->
                         </div>
-                        <div class="col-lg-4 col-md-4 pr-0">
-                            <div class="contact_info">
-                                <h3>Informções para contato</h3>
-                                <ul class="cont_info">
-                                    <li><i class="la la-map-marker"></i> 212 5th Ave, New York</li>
-                                    <li><i class="la la-phone"></i> +1 212-925-3797</li>
-                                    <li><i class="la la-envelope"></i><a href="mailto:info@example.com" title="">tomas@contact.com</a></li>
-                                </ul>
-                                <ul class="social_links">
-                                    <li><a href="#" title=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#" title=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#" title=""><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="#" title=""><i class="fa fa-linkedin"></i></a></li>
-                                </ul>
-                            </div><!--contact_info end-->
-                        </div>
                     </div>
                 </div><!--contact-details-sec end-->
             </div>

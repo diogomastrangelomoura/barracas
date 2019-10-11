@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li class="nav-item submit-btn">
-                <a href="#" class="my-2 my-sm-0 nav-link sbmt-btn">
+                <a href="registrar" class="my-2 my-sm-0 nav-link sbmt-btn">
                     <i class="icon-plus"></i>
                     <span>Registrar</span>
                 </a>

@@ -104,6 +104,9 @@
     <script src="<?php echo PATH ?>assets/js/map-cluster/maps.js"></script>
     <script src="<?php echo PATH ?>assets/js/jquery.mask.js"></script>
     <script src="<?php echo PATH ?>assets/js/funcoes.js"></script>
+    <script src="<?php echo PATH ?>assets/js/star-rating.js" type="text/javascript"></script>
+
+    <script src="<?php echo PATH ?>assets/js/locales/pt-BR.js"></script>
     
 
 
