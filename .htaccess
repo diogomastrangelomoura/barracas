@@ -26,6 +26,8 @@
 
 	RewriteRule ^busca/(.*)?$ busca.php?categoria=$1 [L,QSA]
 
+	RewriteRule ^insertReview?$ procedures/insertReview.php [L,QSA]
+	RewriteRule ^insertRegistro?$ procedures/insertRegistro.php [L,QSA]
 
 
 </IfModule>

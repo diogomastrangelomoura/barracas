@@ -21,7 +21,7 @@
                         <div class="col-lg-8 col-md-8 pl-0">
                             <div class="contact_form">
                                 <h3>Credenciais</h3>
-                                <form class="js-ajax-form">
+                                <form action="insertRegistro" method="post">
                                     <div class="form-group no-pt">
                                         <div class="missing-message">
                                             Populate Missing Fields
@@ -35,31 +35,37 @@
                                         <div class="row">
                                             <div class="col-lg-8 col-md-4 pl-0">
                                                 <div class="form-field">
-                                                    <input type="text" name="login" placeholder="Login" id="login">
+                                                    <input type="text" name="login" placeholder="Login" id="login" required>
                                                 </div><!-- form-field end-->
                                                 <div class="form-field">
-                                                    <input type="password" name="pass" placeholder="Senha" id="pass">
+                                                    <input type="password" name="pass" placeholder="Senha" id="pass" required>
                                                 </div><!-- form-field end-->
                                                 <div class="form-field">
-                                                    <input type="password" name="pass" placeholder="Confirmar Senha" id="pass">
+                                                    <input type="password" name="pass" placeholder="Confirmar Senha" id="pass" onCange="passConfirm()" required>
                                                 </div><!-- form-field end-->
                                                 <div class="form-field">
-                                                    <input type="email" name="email" placeholder="E-mail" id="email">
+                                                    <input type="email" name="email" placeholder="E-mail" id="email" required>
                                                 </div><!-- form-field end-->
                                                 <div class="form-field">
-                                                    <input type="text" name="nome" placeholder="Nome Completo" id="nome">
+                                                    <input type="text" name="nome" placeholder="Nome Completo" id="nome" required>
                                                 </div><!-- form-field end-->
                                                 <div class="form-field">
-                                                    <input type="text" name="agencia" placeholder="Agência" id="agencia">
+                                                    <input type="text" name="agencia" placeholder="Agência" id="agencia" required>
                                                 </div><!-- form-field end-->
                                                 <div class="form-field">
-                                                    <input type="text" name="tel" placeholder="Telefone" id="text" class="phone_with_ddd">
+                                                    <input type="text" name="tel" placeholder="Telefone" id="text" class="phone_with_ddd" required>
                                                 </div><!-- form-field end-->
                                             </div>
                                             <div class="col-lg-12 col-md-12 pl-0">
                                                 <button type="submit" class="btn-default submit">Cadastrar</button>
+                                                <?php if(isset($msgRegist)){
+                                                echo $msgRegist;
+                                                unset($msgRegist);
+                                            } ?>
                                             </div>
-                                            
+                                            <script>
+                                                
+                                            </script>
                                         </div>
                                     </div><!--form-fieldss end-->
                                 </form>

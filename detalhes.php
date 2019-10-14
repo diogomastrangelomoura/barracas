@@ -257,7 +257,7 @@ $id = (int) $id_imovel;
                                     <!-- Final Reviews-->
                                     <div class="review-hd">
                                         
-                                        <form >
+                                        <form action="insertReview" method="post">
                                         <div class="rev-hd">
                                         <h3>Comente sua Experiência</h3>
 
@@ -272,23 +272,26 @@ $id = (int) $id_imovel;
                                                 <div class="row">
                                                     <div class="col-lg-4 col-md-4 pl-0">
                                                         <div class="form-field">
-                                                            <input type="text" name="name" placeholder="Nome">
+                                                            <input type="text" name="nameReview" placeholder="Nome" required>
                                                         </div><!--form-field end-->
                                                     </div>
                                                     <div class="col-lg-4 col-md-4">
                                                         <div class="form-field">
-                                                            <input type="text" name="email" placeholder="E-mail">
+                                                            <input type="email" name="emailReview" placeholder="E-mail" required>
                                                         </div><!--form-field end-->
                                                     </div>
                                                     <div class="col-lg-4 col-md-4 pr-0">
                                                         <div class="form-field">
-                                                            <input type="text" name="phone" placeholder="Telefone">
+                                                            <input type="text" name="phoneReview" placeholder="Telefone" class="phone_with_ddd" required>
                                                         </div><!--form-field end-->
                                                     </div>
                                                     <div class="col-lg-12 pl-0 pr-0">
                                                         <div class="form-field">
-                                                            <textarea name="msg" placeholder="Mensagem"></textarea>
+                                                            <textarea name="msgReview" placeholder="Mensagem" required></textarea>
                                                         </div><!--form-field end-->
+                                                    </div>
+                                                    <div>
+                                                        <input name="id_imovel" id="id_imovel" type="hidden" value= <?php echo "$id_imovel" ?>>
                                                     </div>
                                                     <div class="col-lg-12 pl-0 pr-0">
                                                         <button type="submit" class="btn-default">Postar Mensagem</button>
@@ -301,15 +304,10 @@ $id = (int) $id_imovel;
 
                                 <?php 
                                     if(isset($name) && isset($comentario)){
-                                        $data = $db->data_user_para_mysql(date("d/m/Y"));
                                         $sql = $db->select("INSERT INTO reviews(id_imovel,nome,rating,comentario,data)
                                             VALUES($id_imovel,$rating,$msg,$data");
                                         $db->expand($sql);
                                     }
-                                    unset($name);
-                                    unset($comentario);
-                                    unset($rating);
-                                    unset($data);
                                  ?>
 
                                 <div class="similar-listings-posts">

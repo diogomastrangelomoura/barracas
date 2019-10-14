@@ -17,7 +17,7 @@
             <span class="star"><i class="fa fa-star"></i></span>
             <span class="star"><i class="fa fa-star"></i></span>
         </span>-->
-        <input id="rating" name="rating" type="text" class="kv-fa rating-input" value="0" data-size="xs" title="">
+        <input id="ratingReview" name="ratingReview" type="text" class="kv-fa rating-input" value="0" data-size="xs" title="" required>
     </div>
     <!--<div class="caption">
         <span class="label label-warning badge-warning">Two Stars</span>
